@@ -145,37 +145,3 @@ BGWHT='\033[107m' #White Background
 # This tag reverts the styling to the default set in the terminal.
 BEND=$BDEF
 
-################################################################################
-# Emoji Constants 
-################################################################################
-
-# NOTE: Requires unicode support. There are no 'ending' tags for emojis.
-#
-# TIP: Add an extra space after an emoji `tag` for best visual results.
-#
-# Example: echo -e "Hello I am ${EMHAPPY}  ${CBLU}today${FIN}"
-
-EMHAPPY=😀
-EMCOOL=😎
-EMHEART=❤️
-EMFIRE=🔥
-EMINVADER=👾
-EMTARGET=🎯
-EMBATH=🛀
-EMCOOKIE=🍪
-EMGEM=💎
-EMBULB=💡
-EMBOOK=📔
-EMSCROLL=📜
-EMLABEL=🏷
-EMMONEY=💰
-EMBOX=📦
-EMPENCIL=✏️
-EMPIN=📌
-EMBEER=🍺
-EMROBOT=🤖
-EMPOO=💩
-EMOK=👌
-EMLIKE=👍
-EMDISLIKE=👎
-EMSTOP=✋
