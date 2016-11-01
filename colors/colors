@@ -1,0 +1,142 @@
+#!/bin/bash
+###############################################################################
+# ansi styling constants for bash
+# Copyright 2016 C. Byerley
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy
+# of the License at:
+
+#	http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software distributed
+# under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+# CONDITIONS OF ANY KIND, either express or implied. See the License for the
+# specific language governing permissions and limitations under the License.
+###############################################################################
+
+# As long as you don't plan on using any of the same `tag` names (shown below) as one of 
+# your own variables -- or make the consideration in advance -- this version, though
+# a bit more verbose, can be more natural to use and clearer in the overall script.
+
+###############################################################################
+# Usage
+# This file is to be 'sourced' into a bash script.
+# You use the styling `tags` like HTML tags, but in your `echo`` outputs.
+
+# Example:
+
+# #!/bin/bash
+# . colors
+# echo -e "A Firetruck is ${RED}Red${ERED}"
+
+# NOTE: You MUST use the `-e` flag when using `echo` for tags to render properly.
+
+###############################################################################
+# The Reset Constant `$FIN`
+# This `tag` can be used to clear all open styling.
+
+#Examples:
+# echo -e "${BGGREEN}This is default text on a green background${FIN}"
+# echo -e "Please no ${BLINK}${RED}Red Blinking${FIN}"
+
+# NOTE: $FIN is commonly used at the end of a styled string.
+
+# echo -e "${BOLD}${BLINK}${CYAN}This is bold blinking cyan text..yay!${FIN}'"
+
+# In the example above all the opening tags are closed with a single $FIN.
+
+################################################################################
+FIN='\033[0m' # 'The End' in French
+################################################################################
+
+################################################################################
+# Formatting Literals
+# Each "format" tag has a matching end tag. The form is the "format" 
+# start tag prefixed with a capital "E". 
+
+# Example:
+# echo -e "${BOLD}Be Bold${EBOLD}"
+
+# For more control, and `nesting` styles, use the matching end tag
+#  for each "format" tag type show below.
+
+# You can also use $FIN for ending "format" styling.
+
+################################################################################
+# Format Tags
+
+# NOTE: $EFMT is an alias for any "format" `end`` tag
+# Example: echo -e "${HIDE}Cloaked${EFMT}"
+################################################################################
+# Start Tags
+BOLD='\033[1m' 	 #Bold
+DIM='\033[2m' 	 #Dim
+UL='\033[4m'      #Underline
+INVERT='\033[7m'   #Invert
+BLINK='\033[5m'   #Blink
+HIDE='\033[8m' #Hide
+
+# End Tags
+EBOLD='\033[21m'   # End Bold
+EDIM='\033[22m'   # End Dim
+EUL='\033[24m'      # End Underline
+EINVERT='\033[27m'    # End Invert
+EBLINK='\033[25m'    # End Blink
+EHIDE='\033[28m'  # End Hide
+
+EFMT=$FIN # Clear Styling
+
+################################################################################
+# Color Literals
+# NOTE: $ECLR is the color `end`` tag for all color starting tags.
+# Example: echo -e "Hello ${MAGENTA}Magenta${ECLR}"
+################################################################################
+# Start Tags
+BLACK='\033[30m' #Black
+RED='\033[31m' #Red
+GREEN='\033[32m' #Green
+YELLOW='\033[33m' #Yellow
+BLUE='\033[34m' #Blue
+MAGENTA='\033[35m' #Magenta
+CYAN='\033[36m' #Cyan
+GRAY='\033[37m' #Gray (Lt. Gray)
+DKGRAY='\033[90m' #Dark Gray
+LTRED='\033[91m' #Light Red
+LTGREEN='\033[92m' #Light Green
+LTYELLOW='\033[93m' # Light Yellow
+LTBLUE='\033[94m' #Light Blue
+LTMAGENTA='\033[95m' #Light Magenta
+LTCYAN='\033[96m' #Light Cyan
+WHITE='\033[97m' #White
+
+# End Tags
+C_DEFAULT='\033[39m'
+ECLR=$C_DEFAULT # Default Styling
+
+################################################################################
+# Background Literals
+# NOTE: $EBG is the background end tag for all background color starting tags.
+# Example: echo -e "${BGBLUE}I like a blue background${EBG}"
+################################################################################
+# Start Tags
+BGBLACK='\033[40m' #Black Background
+BGRED='\033[41m' #Red Background
+BGGREEN='\033[42m' #Green Background
+BGYELLOW='\033[43m' #Yellow Background
+BGBLUE='\033[44m' #Blue Background
+BGMAGENTA='\033[45m' #Magenta Background
+BGCYAN='\033[46m' #Cyan Background
+BGGRAY='\033[47m' #Gray (Lt. Gray) Background
+BGDKGRAY='\033[100m' #Dark Gray Background
+BGLTRED='\033[101m' #Light Red Background
+BGLTGREEN='\033[102m' #Light Green Background
+BGLTYELLOW='\033[103m' #Light Yellow Background
+BGLTBLUE='\033[104m' #Light Blue Background
+BGLTMAGENTA='\033[105m' #Light Magenta Background
+BGLTCYAN='\033[106m' #Light Cyan Background
+BGWHITE='\033[107m' #White Background
+
+# End Tags
+BG_DEFAULT='\033[49m' #Reverts Background Color to default.
+EBG=$BG_DEFAULT # Default Styling

@@ -1,0 +1,44 @@
+#!/bin/bash
+################################################################################
+# Emoji Tags 
+################################################################################
+# NOTE: Requires unicode support.
+
+################################################################################
+# Usage
+# Souce the `emojis file in a bash script:
+
+# Example:
+
+# #!/bin/bash
+# . emojis
+# echo -e "Off to the tub ${E_BATH} , caio!"
+
+# TIP: Add an extra space after an emoji `tag` for best visual results.
+
+E_HAPPY=😀
+E_COOL=😎
+E_HEART=❤️
+E_FIRE=🔥
+E_INVADER=👾
+E_TARGET=🎯
+E_BATH=🛀
+E_COOKIE=🍪
+E_GEM=💎
+E_BULB=💡
+E_BOOK=📔
+E_SCROLL=📜
+E_LABEL=🏷
+E_MONEY=💰
+E_BOX=📦
+E_PENCIL=✏️
+E_PIN=📌
+E_BEER=🍺
+E_ROBOT=🤖
+E_POO=💩
+E_OK=👌
+E_LIKE=👍
+E_DISLIKE=👎
+E_STOP=✋
+
+# Add some more and send a `pull` request. :)
